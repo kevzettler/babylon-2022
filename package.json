@@ -1,0 +1,16 @@
+{
+  "name": "babylon_2022_review",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:web:dev": "esbuild src/index.ts --bundle --sourcemap --outdir=www/js --servedir=www"
+  },
+  "devDependencies": {
+    "esbuild": "^0.15.7",
+    "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "babylonjs": "^5.23.0"
+  }
+}
