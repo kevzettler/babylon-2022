@@ -1,20 +1,20 @@
 Arguments: 
-  /Users/kevzettler/.nvm/versions/node/v16.10.0/bin/node /Users/kevzettler/.yarn/bin/yarn.js add babylonjs
+  /Users/kevzettler/.nvm/versions/node/v12.18.1/bin/node /Users/kevzettler/.yarn/bin/yarn.js build:server:dev
 
 PATH: 
-  /Users/kevzettler/.yarn/bin:/Users/kevzettler/.config/yarn/global/node_modules/.bin:/Users/kevzettler/.nvm/versions/node/v16.10.0/bin:/opt/homebrew/bin:/usr/local/opt/icu4c/sbin:/usr/local/sbin:/usr/local/bin:/Applications/Racket v8.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/kevzettler/.cargo/bin:./node_modules/.bin:/Applications/blender.app/Contents/MacOS:/usr/local/Cellar/python@2/2.7.14_3/bin:/Users/kevzettler/Library/Python/2.7/bin:/Users/kevzettler/.cargo/env:/Users/kevzettler/.cargo/bin:/Users/kevzettler/.go/bin:/opt/homebrew/opt/go/libexec/bin
+  /opt/homebrew/opt/qt@5/bin:/Users/kevzettler/.yarn/bin:/Users/kevzettler/.config/yarn/global/node_modules/.bin:/Users/kevzettler/.nvm/versions/node/v12.18.1/bin:/opt/homebrew/bin:/usr/local/opt/icu4c/sbin:/usr/local/sbin:/usr/local/bin:/Applications/Racket v8.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/kevzettler/.cargo/bin:./node_modules/.bin:/Applications/blender.app/Contents/MacOS:/usr/local/Cellar/python@2/2.7.14_3/bin:/Users/kevzettler/Library/Python/2.7/bin:/Users/kevzettler/.cargo/env:/Users/kevzettler/.cargo/bin:/Users/kevzettler/.go/bin:/opt/homebrew/opt/go/libexec/bin
 
 Yarn version: 
   1.22.19
 
 Node version: 
-  16.10.0
+  12.18.1
 
 Platform: 
   darwin arm64
 
 Trace: 
-  SyntaxError: /Users/kevzettler/code/babylon_2022_review/package.json: Unexpected token } in JSON at position 198
+  SyntaxError: /Users/kevzettler/code/babylon_2022_review/package.json: Unexpected string in JSON at position 214
       at JSON.parse (<anonymous>)
       at /Users/kevzettler/.yarn/lib/cli.js:1629:59
       at Generator.next (<anonymous>)
@@ -27,12 +27,17 @@ npm manifest:
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",
-    "scripts":{
-      "build:web:dev": "esbuild src/index.ts --sourcemap --outfile=www/js/index.js",
+    "scripts": {
+      "build:web:dev": "esbuild src/index.ts --bundle --sourcemap --outdir=www/js --servedir=www"
+      "build:server:dev": "esbuild src/server.ts --bundle --sourcemap --outdir=build"
     },
     "devDependencies": {
       "esbuild": "^0.15.7",
       "typescript": "^4.8.3"
+    },
+    "dependencies": {
+      "babylonjs": "^5.23.0",
+      "mudb": "^1.0.1"
     }
   }
 
@@ -48,6 +53,23 @@ Lockfile:
     version "0.15.7"
     resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.15.7.tgz#1ec4af4a16c554cbd402cc557ccdd874e3f7be53"
     integrity sha512-IKznSJOsVUuyt7cDzzSZyqBEcZe+7WlBqTVXiF1OXP/4Nm387ToaXZ0fyLwI1iBlI/bzpxVq411QE2/Bt2XWWw==
+  
+  babylonjs@^5.23.0:
+    version "5.23.0"
+    resolved "https://registry.yarnpkg.com/babylonjs/-/babylonjs-5.23.0.tgz#8cc1a54e2b021337340421f133803857561f45fc"
+    integrity sha512-XyXWsD6YdaYwaE9F1UR2Las5QrqkhTw+FJWG0R4gczSoXiEjeW0AqlfUtwcqOFPyBeIxNL1V+5Siy96eu32oJQ==
+  
+  bufferutil@4.0.2:
+    version "4.0.2"
+    resolved "https://registry.yarnpkg.com/bufferutil/-/bufferutil-4.0.2.tgz#79f68631910f6b993d870fc77dc0a2894eb96cd5"
+    integrity sha512-AtnG3W6M8B2n4xDQ5R+70EXvOpnXsFYg/AK2yTZd+HQ/oxAdz+GI+DvjmhBw3L0ole+LJ0ngqY4JMbDzkfNzhA==
+    dependencies:
+      node-gyp-build "^4.2.0"
+  
+  content-type@1.0.4:
+    version "1.0.4"
+    resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
+    integrity sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==
   
   esbuild-android-64@0.15.7:
     version "0.15.7"
@@ -176,7 +198,34 @@ Lockfile:
       esbuild-windows-64 "0.15.7"
       esbuild-windows-arm64 "0.15.7"
   
+  mudb@^1.0.1:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/mudb/-/mudb-1.0.1.tgz#2457b476f102887d878fa10dda9b360c866ef043"
+    integrity sha512-9AWRhGwFxPbcswsXHe+LpEH/GCULvTW4DmCJvUSCYueRMvNRLuWTB0nI+i0T52uSy68hbz+LiGGzHExgrN5abw==
+    dependencies:
+      bufferutil "4.0.2"
+      content-type "1.0.4"
+      utf-8-validate "5.0.3"
+      ws "7.4.0"
+  
+  node-gyp-build@^4.2.0:
+    version "4.5.0"
+    resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-4.5.0.tgz#7a64eefa0b21112f89f58379da128ac177f20e40"
+    integrity sha512-2iGbaQBV+ITgCz76ZEjmhUKAKVf7xfY1sRl4UiKQspfZMH2h06SyhNsnSVy50cwkFQDGLyif6m/6uFXHkOZ6rg==
+  
   typescript@^4.8.3:
     version "4.8.3"
     resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.8.3.tgz#d59344522c4bc464a65a730ac695007fdb66dd88"
     integrity sha512-goMHfm00nWPa8UvR/CPSvykqf6dVV8x/dp0c5mFTMTIu0u0FlGWRioyy7Nn0PGAdHxpJZnuO/ut+PpQ8UiHAig==
+  
+  utf-8-validate@5.0.3:
+    version "5.0.3"
+    resolved "https://registry.yarnpkg.com/utf-8-validate/-/utf-8-validate-5.0.3.tgz#3b64e418ad2ff829809025fdfef595eab2f03a27"
+    integrity sha512-jtJM6fpGv8C1SoH4PtG22pGto6x+Y8uPprW0tw3//gGFhDDTiuksgradgFN6yRayDP4SyZZa6ZMGHLIa17+M8A==
+    dependencies:
+      node-gyp-build "^4.2.0"
+  
+  ws@7.4.0:
+    version "7.4.0"
+    resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.0.tgz#a5dd76a24197940d4a8bb9e0e152bb4503764da7"
+    integrity sha512-kyFwXuV/5ymf+IXhS6f0+eAFvydbaBW3zjpT6hUdAh/hbVjTIB5EHBGi0bPoCLSK2wcuz3BrEkB9LrYv1Nm4NQ==
