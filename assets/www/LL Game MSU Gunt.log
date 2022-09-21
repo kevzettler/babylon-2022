@@ -1,0 +1,36 @@
+Exporter version: 2.93.5, Blender version: 2.93.4
+========= Conversion from Blender to Babylon.js =========
+	Scene settings used :
+		Inline textures     :  false
+		Material Type       :  PBR
+		Positions Precision :  4
+		Normals Precision   :  3
+		UVs Precision       :  3
+		Vert Color Precision:  3
+		Mat Weight Precision:  2
+		Keep Z-up r-handed  :  no
+		Texture directory   :  /Users/kevzettler/code/babylon_2022_review/
+========= An error was encountered =========
+  File "/Users/kevzettler/Library/Application Support/Blender/2.93/scripts/addons/babylon_js/json_exporter.py", line 77, in execute
+    self.world = World(scene, self)
+  File "/Users/kevzettler/Library/Application Support/Blender/2.93/scripts/addons/babylon_js/world.py", line 57, in __init__
+    worldNode = AbstractBJSNode.readWorldNodeTree(world.node_tree)
+  File "/Users/kevzettler/Library/Application Support/Blender/2.93/scripts/addons/babylon_js/materials/nodes/abstract.py", line 257, in readWorldNodeTree
+    return AbstractBJSNode.readNodeTree(node_tree, 'ShaderNodeOutputWorld')
+  File "/Users/kevzettler/Library/Application Support/Blender/2.93/scripts/addons/babylon_js/materials/nodes/abstract.py", line 285, in readNodeTree
+    return AbstractBJSNode(output, topLevelId, overloadChannels)
+  File "/Users/kevzettler/Library/Application Support/Blender/2.93/scripts/addons/babylon_js/materials/nodes/abstract.py", line 84, in __init__
+    bjsWrapperNode = AbstractBJSNode.GetBJSWrapperNode(nodeSocket.links[0].from_node, nodeSocket.name, overloadChannels)
+  File "/Users/kevzettler/Library/Application Support/Blender/2.93/scripts/addons/babylon_js/materials/nodes/abstract.py", line 335, in GetBJSWrapperNode
+    return PrincipledBJSNode(bpyNode, socketName, overloadChannels)
+  File "/Users/kevzettler/Library/Application Support/Blender/2.93/scripts/addons/babylon_js/materials/nodes/principled.py", line 11, in __init__
+    super().__init__(bpyNode, socketName, overloadChannels)
+  File "/Users/kevzettler/Library/Application Support/Blender/2.93/scripts/addons/babylon_js/materials/nodes/abstract.py", line 84, in __init__
+    bjsWrapperNode = AbstractBJSNode.GetBJSWrapperNode(nodeSocket.links[0].from_node, nodeSocket.name, overloadChannels)
+  File "/Users/kevzettler/Library/Application Support/Blender/2.93/scripts/addons/babylon_js/materials/nodes/abstract.py", line 347, in GetBJSWrapperNode
+    return TextureImageBJSNode(bpyNode, socketName, overloadChannels)
+  File "/Users/kevzettler/Library/Application Support/Blender/2.93/scripts/addons/babylon_js/materials/nodes/tex_image.py", line 13, in __init__
+    self.alpha = bpyNode.image.file_format not in NON_ALPHA_FORMATS
+ERROR:  'NoneType' object has no attribute 'file_format'
+========= end of processing =========
+elapsed time:  0 min, 0.0087 secs

@@ -1,0 +1,49 @@
+Exporter version: 2.93.5, Blender version: 2.93.4
+========= Conversion from Blender to Babylon.js =========
+	Scene settings used :
+		Inline textures     :  false
+		Material Type       :  PBR
+		Positions Precision :  4
+		Normals Precision   :  3
+		UVs Precision       :  3
+		Vert Color Precision:  3
+		Mat Weight Precision:  2
+		Keep Z-up r-handed  :  no
+		Texture directory   :  /Users/kevzettler/code/babylon_2022_review/
+	Python World class constructor completed
+	WARNING: No active camera has been assigned, or is not in a currently enabled collection
+	processing begun of skeleton:  PS1 Boy, id:  0
+		processing begun of bone:  Torso, index:  0
+		processing begun of bone:  Head, index:  1
+		processing begun of bone:  Left.Shoulder, index:  2
+		processing begun of bone:  Left.Arm, index:  3
+		processing begun of bone:  Left.Hand, index:  4
+		processing begun of bone:  Right.Shoulder, index:  5
+		processing begun of bone:  Right.Arm, index:  6
+		processing begun of bone:  Right.Hand, index:  7
+		processing begun of bone:  Left.leg, index:  8
+		processing begun of bone:  Left.Foot, index:  9
+		processing begun of bone:  Right.leg, index:  10
+		processing begun of bone:  Right.Foot, index:  11
+	processing begun of mesh:  PS1 Mesh
+		animation processing begun
+		processing begun of material:  Material
+			processing texture PixelTextureGrid_256PS1Boy
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		num positions      :  1211
+		num normals        :  1211
+		num tangents       :  0
+		num uvs            :  2422
+		num uvs2           :  0
+		num colors         :  4844
+		num triangles      :  519
+		Skeleton stats:  
+			Total Influencers:  1760
+			Avg # of influencers per vertex:  1.4533
+			Highest # of influencers observed:  3, num vertices with this:  230
+			exported as 3 influencers
+			num skeletonWeights and skeletonIndices:  4844
+		WARNING: # of 0 area faces found:  2
+	Mesh: PS1 Mesh has un-applied transformations.  This will never work for a mesh with an armature.  Export cancelled
+========= end of processing =========
+elapsed time:  0 min, 0.0554 secs
