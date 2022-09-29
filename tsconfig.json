@@ -9,6 +9,7 @@
   },
   "exclude": ["node_modules", "www", "**/*.test.ts"],
   "types": [
-    "babylonjs"
+    "babylonjs",
+    "babylonjs-loaders"
   ]
 }

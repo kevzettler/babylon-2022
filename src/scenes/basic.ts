@@ -1,4 +1,4 @@
-import { Scene, Engine, MeshBuilder, ArcRotateCamera, HemisphericLight, Vector3 } from 'babylonjs';
+import { Scene, Engine, MeshBuilder, ArcRotateCamera, HemisphericLight, Vector3 } from '@babylonjs/core';
 
 export default function basicScene(engine: Engine): Scene {
   const scene = new Scene(engine);
