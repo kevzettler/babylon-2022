@@ -287,6 +287,11 @@ fill-range@^7.0.1:
   dependencies:
     to-regex-range "^5.0.1"
 
+fixed-game-loop@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/fixed-game-loop/-/fixed-game-loop-0.2.2.tgz#59bf7368508b6b4e0016bd722f4e2237bbf2ea4e"
+  integrity sha512-huRDCXo3afXZwwBgx28JYJLp84D7wOEBOLWt9r2zj/pH+3Mfl6PdIn4kMsj8o9t8O0HF6A+yqfgo7ZlVlxS6eA==
+
 fsevents@~2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"

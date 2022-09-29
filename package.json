@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build:web:dev": "esbuild src/index.ts --bundle --sourcemap --outdir=www/js --servedir=www",
+    "build:web:dev": "esbuild src/index.ts --bundle --sourcemap --define:global=window --outdir=www/js --servedir=www",
     "dev:server:dev": "./node_modules concurrently \"esbuild src/server.ts --platform=node --bundle --sourcemap --outdir=build --watch\" \"yarn start:server:dev\" ",
     "start:server:dev": "nodemon ./build/server.js"
   },
@@ -17,6 +17,7 @@
   "dependencies": {
     "@babylonjs/core": "^5.25.0",
     "@babylonjs/loaders": "^5.25.0",
+    "fixed-game-loop": "^0.2.2",
     "xmlhttprequest": "^1.8.0"
   }
 }
