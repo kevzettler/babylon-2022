@@ -18,14 +18,10 @@ async function main(sceneDef: SceneDef) {
     camera.attachControl(canvas, true);
 
 
-    engine.runRenderLoop(function() {
-        scene.render();
-    });
-
     new Loop({
         update: () => { },
         render: () => scene.render(),
-        autoStart: false,
+        autoStart: true,
     });
 }
 
